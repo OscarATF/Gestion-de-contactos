@@ -10,6 +10,26 @@ struct contactoEmail {
 	string nacionalidad;
 };
 
+void agregaContacto(contactoEmail arr[],int& n) {
+	system("cls");
+	cout<<"Ingrese el nombre de la persona: ";
+	cin.ignore();
+	getline(cin,arr[n].nombreCompleto);
+	cout<<"Ingrese su sexo (M/F): ";
+	cin>>arr[n].sexo;
+	cout<<"Ingrese su edad: ";
+	cin>>arr[n].edad;
+	cout<<"Ingrese su nacionalidad: ";
+	cin>>arr[n].nacionalidad;
+    cout<<"Ingrese su email: ";
+	cin>>arr[n].email;
+	cout<<"Ingrese su numero de telefono: ";
+	cin>>arr[n].telefono;
+	cout<<"\nContacto Agregado\n"<<endl;
+	n++;
+	system("pause");
+}
+
 int main() {
 	const int MAX=1000;
 	contactoEmail ListadoContactos[MAX]={
@@ -35,6 +55,7 @@ int main() {
 		cin>>op;
 		switch (op) {
 			case 1: //agregar un contacto
+				agregaContacto(ListadoContactos,n);
 				break;
 			case 2: //eliminar un contacto
 				break;
