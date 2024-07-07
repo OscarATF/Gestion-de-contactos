@@ -54,8 +54,23 @@ void eliminarContacto(contactoEmail arr[], int& n) {
 	system("pause");
 }
 
+void listaContacto(contactoEmail arr[], int n) {
+	system("cls");
+	cout<<"Listado general de contactos registrados:\n"<<endl;
+	for (int i=0;i<n;i++) {
+		cout<<"CONTACTO "<<i+1<<" :\n"<<endl;
+		cout<<"Nombre: "<<arr[i].nombreCompleto<<endl;
+		cout<<"Sexo: "<<arr[i].sexo<<endl;
+		cout<<"Edad: "<<arr[i].edad<<endl;
+		cout<<"Nacionalidad: "<<arr[i].nacionalidad<<endl;
+		cout<<"Email: "<<arr[i].email<<endl;
+		cout<<"Telefono: "<<arr[i].telefono<<endl<<endl;
+	}
+	system("pause");
+}
+
 int main() {
-	const int MAX=1000;
+	const int MAX=1000; //Maximo numero de contactos
 	contactoEmail ListadoContactos[MAX]={
 		{"Pedro Manuel",'M',20,"934233321","pedroman@gmail.com","Peruana"},
 		{"Amelia Rodriguez",'F',22,"967328325","ameliro@outlook.com","Chilena"},
@@ -66,7 +81,7 @@ int main() {
 	};
 	
 	int op;
-	int n=6;
+	int n=6; //numero de contactos inicial
 	
 	do {
 		system("cls");
@@ -85,6 +100,7 @@ int main() {
 				eliminarContacto(ListadoContactos,n);
 				break;
 			case 3: //listado de contactos
+				listaContacto(ListadoContactos,n);
 				break;
 			case 4: //ordenamiento por correo
 				break;
