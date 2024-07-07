@@ -30,6 +30,30 @@ void agregaContacto(contactoEmail arr[],int& n) {
 	system("pause");
 }
 
+void eliminarContacto(contactoEmail arr[], int& n) {
+	int indice;
+	int contacto;
+	system("cls");
+	cout<<"Lista de Contactos:\n"<<endl;
+		for (int j=0;j<n;j++) {
+			cout<<"CONTACTO "<<j+1<<" :\n"<<endl;
+			cout<<"Nombre: "<<arr[j].nombreCompleto<<endl<<endl;
+		}
+			cout<<"Digite el numero de contacto que desea eliminar: ";
+			cin>>contacto;
+			indice=contacto-1;
+		if (indice >= 0 && indice < n) {
+			for (int j=indice;j<n-1;++j) {
+				arr[j]=arr[j+1];
+			}
+			n--;
+			cout<<"\nContacto eliminado\n"<<endl;
+		} else {
+		cout<<"\nIndice no valido\n"<<endl;
+		}
+	system("pause");
+}
+
 int main() {
 	const int MAX=1000;
 	contactoEmail ListadoContactos[MAX]={
@@ -58,6 +82,7 @@ int main() {
 				agregaContacto(ListadoContactos,n);
 				break;
 			case 2: //eliminar un contacto
+				eliminarContacto(ListadoContactos,n);
 				break;
 			case 3: //listado de contactos
 				break;
